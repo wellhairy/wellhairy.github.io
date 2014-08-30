@@ -1,0 +1,11 @@
+
+// Normalize
+@import "normalize";
+
+// Custome partials
+@import "partials/var",
+		"partials/global",
+		"partials/mixins",
+		"partials/typography",
+		"partials/forms",
+		"partials/slides";

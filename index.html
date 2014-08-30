@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+      <header>
+        <div id="logo"><img src="img/logo.svg" alt="wellhairy design"></div>
+      </header>
+      <nav>
+        <ul>
+          <li><img src="img/portfolio.svg" alt="portfolio"></li>
+          <li><img src="img/dev.svg" alt="user experiance"></li>
+          <li><img src="img/ux.svg" alt="user experiance"></li>
+        </ul>
+      </nav>
+
+      <main>
+        
+        <!-- Section 1 -->
+        <section id="stage-1" class="slides">
+            <div class="bokeh"></div>
+        </section>
+           
+        <!-- Section 2 -->
+        <section id="stage-2" class="slides">
+
+
+        </section>   
+
+        <!-- Section 2 -->
+        <section id="stage-2" class="slides">
+            <form id="ajax-contact" method="post" action="mailer.php">
+                <div class="field">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="field">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <div class="field">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </section>   
+
+      </main>
+      <!-- /container -->
+
+
+
+      <script src="js/vendor/jquery-1.10.2.min.js"></script>
+      <!-- js helper plugins in plugins.js -->
+
+      <!-- <script src="js/plugins.js"></script> -->
+      <!-- <script type="text/javascript" src="js/vendor/skrollr.js"></script> -->
+      <script src="js/vendor/imagesloaded.js"></script>
+      <script type="text/javascript" src="assets/js/jquery.stellar.min.js"></script>
+      <script src="js/main.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function(){
+
+          //var r = Math.floor(2 + Math.random() * 100);
+          var lastPosition = 0;
+          var newTopPosition;
+
+
+          for (i = 1; i <= 20; i++) {
+
+              /*console.log("i'm logged " +i);
+              $('.container').append('<div class="glow"></div>');
+              var r = Math.floor(2 + Math.random() * 100)
+
+              $('.glow').css('height', r + 'px').css('width', r + 'px').css('left', 'calc(50% - '+r+'px)');
+              console.log(r);*/
+
+              var r = Math.floor(2 + Math.random() * 15);
+              //var rRound = (r).toFixed(2); 
+              var newPosition = position(lastPosition);
+              var newTopPosition = topPosition(newTopPosition);
+
+              //console.log(newPosition);
+              console.log("top:" + newTopPosition);
+              lastPosition = newPosition;
+              //lastTopPosition = newTopPosition;
+
+              var glow = '<div class="glow" style="height:' + r +'px; width:' + r +'px; left: '+ newPosition + 'px; top: calc(50% - ' + newTopPosition +'px);"></div>';
+              //console.log("i'm logged " +i);
+
+
+
+
+              //$(glow).hide().appendTo(".starContainer").fadeIn(1000).delay(1000);
+              $('.bokeh').append(glow);
+          }
+          $("bokeh .glow").hide();
+          var newDelay = 5;
+          $('.glow').each(function(i){
+              $(this).fadeIn(newDelay).delay(1000);
+              newDelay += 400;
+          });
+          //$(".glow").fadeIn(1000).delay(1000);
+          $( ".bokeh" ).wrap( "<div class='bokehContainer'></div>" );
+      })
+
+      function newr(r){
+          var r = Math.floor(2 + Math.random() * 15);
+      }
+      function topPosition(num){
+          var num = Math.floor(Math.random()*50) + 1; // this will get a number between 1 and 99;
+          num *= Math.floor(Math.random()*2) == 1 ? 1 : -1; // this will add minus sign in 50% of cases
+          return num;
+      }
+      function position(last){
+          last += Math.floor(2 + Math.random() * 80);
+          return last;
+      }
+
+      </script>
+    <script type="text/javascript">
+    $(window).stellar({
+      responsive: true,
+      hideDistantElements: false,
+          horizontalScrolling: false,
+          verticalScrolling: true
+    });
+
+    // $(document).ready(function(){
+      
+    //  // use data-type="background" data-speed="10" to control custome code
+    //  // Cache the Window object
+    //  $window = $(window);
+
+
+    //  $('section[data-type="background"]').each(function(){
+    //    var bgobj = $(this);
+    //    //console.log(bgobj);
+
+    //    $(window).scroll(function() {
+
+    //      var yPos = -($window.scrollTop() / bgobj.data('speed'));
+
+    //      var coords = '50% '+ yPos + 'px';
+    //      //console.log(yPos);
+
+    //      bgobj.css({ backgroundPosition: coords });
+    //    });
+    //  });
+
+
+    // });
+
+    </script>
+  </body>
+
+</html>

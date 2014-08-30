@@ -1,0 +1,1 @@
+!function($){function i(){winH=$window.height(),550>=winH&&(winH=550),$slide.height(winH)}$window=$(window),$slide=$(".homeSlide"),$body=$("body"),$body.imagesLoaded(function(){setTimeout(function(){i(),$body.removeClass("loading").addClass("loaded")},800)})}(jQuery);var s=skrollr.init();s.refresh($(".homeSlide"));
